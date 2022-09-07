@@ -54,6 +54,9 @@ dev_dependencies:
   # https://pub.dev/packages/freezed
   freezed: ^2.1.0+1
 
+  # https://pub.dev/packages/faker
+  faker: ^2.0.0
+
 
  
 

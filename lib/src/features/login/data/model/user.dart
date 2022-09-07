@@ -17,7 +17,7 @@ class User with _$User {
 @freezed
 class UserEmail with _$UserEmail {
   factory UserEmail({
-    required String id,
+    required int id,
     required String email,
     @JsonKey(defaultValue: false, name: 'default') required bool isMain,
   }) = _UserEmail;
