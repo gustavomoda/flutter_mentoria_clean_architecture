@@ -17,8 +17,8 @@ dependencies:
   # https://pub.dev/packages/injectable/install
   injectable: ^1.5.3
 
-  # https://pub.dev/packages/freezed
-  freezed: ^2.1.0+1
+  # https://pub.dev/packages/freezed_annotation
+  freezed_annotation: ^2.1.0
 
   # https://pub.dev/packages/dio/install
   dio: ^4.0.6
@@ -51,6 +51,9 @@ dev_dependencies:
   # https://pub.dev/packages/retrofit_generator/
   retrofit_generator: ^4.0.3+1 
   
+  # https://pub.dev/packages/freezed
+  freezed: ^2.1.0+1
+
 
  
 
