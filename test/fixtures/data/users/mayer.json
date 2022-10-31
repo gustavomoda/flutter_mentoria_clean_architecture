@@ -1,0 +1,10 @@
+{
+  "id": 1,
+  "name": "Mayer Leonard",
+  "emails": [
+    {
+      "email": "me@email.com",
+      "default": false
+    }
+  ]
+}
