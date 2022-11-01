@@ -1,6 +1,7 @@
 // Create test aoo and wrap widget for testing proposes
 import 'dart:async';
 
+import 'package:dio/dio.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -21,6 +22,11 @@ Future<void> testExecutable(FutureOr<void> testMain) async {
   // register fakers
   final faker = injector.get<Faker>();
   final userEmailFaker = UserEmailFaker(injector.get<Faker>());
+  injector.registerSingleton<Dio>(
+    Dio(), // TODO: Mock
+    instanceName: 'dioMock',
+    signalsReady: true,
+  );
   injector.registerSingleton<Faker>(faker);
   injector.registerSingleton<UserEmailFaker>(userEmailFaker);
   injector.registerSingleton<UserFaker>(UserFaker(faker, userEmailFaker));

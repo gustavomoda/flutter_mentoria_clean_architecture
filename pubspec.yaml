@@ -56,6 +56,9 @@ dev_dependencies:
 
   # https://pub.dev/packages/faker
   faker: ^2.0.0
+ 
+  # https://pub.dev/packages/mocktail
+  mocktail: ^0.3.0
 
 
  

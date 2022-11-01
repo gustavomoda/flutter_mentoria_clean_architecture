@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
@@ -10,8 +11,9 @@ final injector = GetIt.instance;
   preferRelativeImports: true, // default
   asExtension: false, // default
 )
-GetIt configureTestDependencies([String environment = Environment.prod]) =>
-    $initGetIt(
-      injector,
-      environment: environment,
-    );
+GetIt configureTestDependencies([String environment = Environment.prod]) {
+  return $initGetIt(
+    injector,
+    environment: environment,
+  );
+}
