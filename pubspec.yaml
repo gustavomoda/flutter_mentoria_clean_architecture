@@ -32,6 +32,9 @@ dependencies:
   # https://pub.dev/packages/uuid
   uuid: ^3.0.6
 
+  # https://pub.dev/packages/fpdart
+  fpdart: ^0.3.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

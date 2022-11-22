@@ -1,6 +1,10 @@
 import 'package:dio/dio.dart';
+import 'package:fpdart/fpdart.dart';
+import 'package:mentoria_clean_architecture/src/features/login/data/model/auth.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:mentoria_clean_architecture/src/features/login/data/source/login.dart';
+
+import '../../../../../core/default_error.dart';
 
 part 'login.g.dart';
 
@@ -10,5 +14,5 @@ abstract class LoginRemoteDataSource implements LoginDataSource {
 
   @override
   @POST('/login')
-  Future login({required String username, required String secret});
+  Future<Either<DefaultError, AuthModel>> login({required String username, required String secret});
 }
