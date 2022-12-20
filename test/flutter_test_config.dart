@@ -5,9 +5,10 @@ import 'package:dio/dio.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart';
+import 'package:mentoria_clean_architecture/src/injector.dart';
 
 import 'fixtures/fakers/users/user_faker.dart';
-import 'injector.dart';
 
 MaterialApp createTestApp(Widget widget) => MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -16,20 +17,21 @@ MaterialApp createTestApp(Widget widget) => MaterialApp(
     );
 
 // Create test executable for all tests
-Future<void> testExecutable(FutureOr<void> testMain) async {
-  final injector = configureTestDependencies();
+
+Future<void> testExecutable(FutureOr<void> Function() testMain) async {
+  configureDependencies(Environment.test);
 
   // register fakers
-  final faker = injector.get<Faker>();
-  final userEmailFaker = UserEmailFaker(injector.get<Faker>());
-  injector.registerSingleton<Dio>(
-    Dio(), // TODO: Mock
-    instanceName: 'dioMock',
-    signalsReady: true,
-  );
+  final faker = Faker();
+  final userEmailFaker = UserEmailModelFaker(faker);
+
   injector.registerSingleton<Faker>(faker);
-  injector.registerSingleton<UserEmailFaker>(userEmailFaker);
-  injector.registerSingleton<UserFaker>(UserFaker(faker, userEmailFaker));
+
+  injector.registerSingleton<UserEmailModelFaker>(userEmailFaker);
+  injector.registerSingleton<UserModelFaker>(UserModelFaker(
+    faker,
+    userEmailFaker,
+  ));
 
   // Wait init lazy injector
   await injector.allReady();
@@ -37,13 +39,10 @@ Future<void> testExecutable(FutureOr<void> testMain) async {
   // Execute once before all tests
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    print('Execute once before all tests');
   });
 
   // execute before run each test
-  setUp(() {
-    // TODO: reset mocks
-    // TODO: Clean caches and database
-    print('Execute before run each test');
-  });
+  setUp(() {});
+
+  return testMain();
 }

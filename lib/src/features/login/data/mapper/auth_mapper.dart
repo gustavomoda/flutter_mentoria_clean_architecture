@@ -5,9 +5,10 @@ import '../../domain/entity/auth.dart';
 import '../model/auth.dart';
 
 abstract class AuthMapper
-    with MapperEntity<AuthEntity, AuthModel>, MapperModel<AuthModel, AuthEntity> {}
+    with
+        MapperModelAsEntity<AuthModel, AuthEntity>,
+        MapperEntityAsModel<AuthEntity, AuthModel> {}
 
-@Injectable()
 @Singleton(as: AuthMapper)
 class AuthMapperImpl extends AuthMapper {
   @override
@@ -18,9 +19,9 @@ class AuthMapperImpl extends AuthMapper {
       );
 
   @override
-  AuthModel toModel(AuthEntity entity) => AuthModel(
-        accessToken: entity.accessToken,
-        refreshToken: entity.refreshToken,
-        expiresIn: entity.expiresIn,
+  AuthModel toModel(AuthEntity model) => AuthModel(
+        accessToken: model.accessToken,
+        refreshToken: model.refreshToken,
+        expiresIn: model.expiresIn,
       );
 }

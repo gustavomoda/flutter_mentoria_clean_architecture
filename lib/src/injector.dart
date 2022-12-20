@@ -10,7 +10,8 @@ final injector = GetIt.instance;
   preferRelativeImports: true, // default
   asExtension: false, // default
 )
-void configureDependencies([String environment = Environment.prod]) => $initGetIt(
+void configureDependencies([String environment = Environment.prod]) =>
+    $initGetIt(
       injector,
       environment: environment,
     );

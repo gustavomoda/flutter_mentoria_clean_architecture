@@ -20,8 +20,5 @@ abstract class PojoFaker<T> {
   double get randomAmount => faker.randomGenerator.decimal(scale: 2, min: 1);
 
   // Generate a random id
-  int get randomId => faker.randomGenerator.integer(
-        double.infinity.toInt(),
-        min: 1,
-      );
+  int get randomId => faker.randomGenerator.integer(10000000, min: 1);
 }

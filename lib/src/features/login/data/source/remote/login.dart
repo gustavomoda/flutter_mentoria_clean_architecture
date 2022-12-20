@@ -14,5 +14,5 @@ abstract class LoginRemoteDataSource implements LoginDataSource {
 
   @override
   @POST('/login')
-  Future<Either<DefaultError, AuthModel>> login({required String username, required String secret});
+  Future<AuthModel> login({required String username, required String secret});
 }

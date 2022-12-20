@@ -20,8 +20,9 @@ class LoginRepositoryImpl implements LoginRepository {
     required String username,
     required String secret,
   }) async {
-    final result = await remote.login(username: username, secret: secret);
+    throw UnimplementedError();
+    // final result = await remote.login(username: username, secret: secret);
 
-    return result.fold((error) => Left(error), (model) => Right(mapper.toEntity(model)));
+    // return result.fold((error) => Left(error), (model) => Right(mapper.toEntity(model)));
   }
 }
