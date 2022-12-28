@@ -62,6 +62,8 @@ dev_dependencies:
  
   # https://pub.dev/packages/mocktail
   mocktail: ^0.3.0
+  http_mock_adapter: ^0.3.3
+  full_coverage: ^0.0.3
 
 
  

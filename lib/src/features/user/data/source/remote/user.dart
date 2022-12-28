@@ -11,6 +11,6 @@ abstract class UserRemoteDataSource implements UserDataSource {
   factory UserRemoteDataSource(Dio dio) = _UserRemoteDataSource;
 
   @override
-  @GET('/')
+  @GET('/users/actives')
   Future<List<UserModel>> actives();
 }

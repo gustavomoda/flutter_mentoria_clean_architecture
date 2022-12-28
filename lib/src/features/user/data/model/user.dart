@@ -13,8 +13,7 @@ class UserModel with _$UserModel {
     required List<UserEmail> emails,
   }) = _UserModel;
 
-  factory UserModel.fromJson(Map<String, Object?> json) =>
-      _$UserModelFromJson(json);
+  factory UserModel.fromJson(Map<String, Object?> json) => _$UserModelFromJson(json);
 }
 
 @freezed
@@ -25,6 +24,5 @@ class UserEmail with _$UserEmail {
     @JsonKey(defaultValue: false, name: 'default') required bool isMain,
   }) = _UserEmail;
 
-  factory UserEmail.fromJson(Map<String, Object?> json) =>
-      _$UserEmailFromJson(json);
+  factory UserEmail.fromJson(Map<String, Object?> json) => _$UserEmailFromJson(json);
 }

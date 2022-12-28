@@ -50,7 +50,11 @@
       // strings. This setting will prevent that.
       "editor.wordBasedSuggestions": false
     },
-    "cSpell.words": ["mentoria"]
+    "cSpell.words": [
+      "appbar",
+      "mentoria",
+      "wireframe"
+    ]
   },
   "extensions": {
     "recommendations": [
