@@ -1,6 +1,11 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
+import 'package:mentoria_clean_architecture/src/injector.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  configureDependencies(kDebugMode ? Environment.dev : Environment.prod);
   runApp(const MyApp());
 }
 

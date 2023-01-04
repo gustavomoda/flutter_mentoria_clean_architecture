@@ -4,14 +4,16 @@ part 'user.freezed.dart';
 part 'user.g.dart';
 
 @freezed
-class User with _$User {
-  factory User({
+class UserModel with _$UserModel {
+  factory UserModel({
     required int id,
-    required String name,
+    required String lastName,
+    required String firstName,
+    required String phone,
     required List<UserEmail> emails,
-  }) = _User;
+  }) = _UserModel;
 
-  factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);
+  factory UserModel.fromJson(Map<String, Object?> json) => _$UserModelFromJson(json);
 }
 
 @freezed
@@ -22,6 +24,5 @@ class UserEmail with _$UserEmail {
     @JsonKey(defaultValue: false, name: 'default') required bool isMain,
   }) = _UserEmail;
 
-  factory UserEmail.fromJson(Map<String, Object?> json) =>
-      _$UserEmailFromJson(json);
+  factory UserEmail.fromJson(Map<String, Object?> json) => _$UserEmailFromJson(json);
 }

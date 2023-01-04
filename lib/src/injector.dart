@@ -5,9 +5,6 @@ import 'injector.config.dart';
 
 final injector = GetIt.instance;
 
-@module
-abstract class RegisterModule {}
-
 @InjectableInit(
   initializerName: r'$initGetIt', // default
   preferRelativeImports: true, // default

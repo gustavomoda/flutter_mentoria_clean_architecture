@@ -1,18 +1,14 @@
 {
   "id": 1,
-  "firstName": "Mayer",
-  "lastName": "Leonard",
+  "firstName": "John",
+  "lastName": "Doe",
   "phone": "+5516999999999",
   "emails": [
     {
       "id": 1,
       "email": "me.main@email.com",
       "isMain": true
-    },
-    {
-      "id": 2,
-      "email": "me@email.com",
-      "isMain": false
     }
+     
   ]
 }

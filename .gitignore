@@ -54,3 +54,4 @@ app.*.map.json
 *.g.dart
 *.freezed.dart
 injector.config.dart
+full_coverage_test.dart

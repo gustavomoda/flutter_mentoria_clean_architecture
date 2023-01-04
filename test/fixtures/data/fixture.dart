@@ -1,4 +1,5 @@
-String get_fixture() {
-  // TODO: Get user
-  return "";
+import 'dart:io';
+
+String getFixture(name) {
+  return File('test/fixtures/data/$name.json').readAsStringSync();
 }

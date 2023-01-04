@@ -32,6 +32,9 @@ dependencies:
   # https://pub.dev/packages/uuid
   uuid: ^3.0.6
 
+  # https://pub.dev/packages/fpdart
+  fpdart: ^0.3.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -56,6 +59,11 @@ dev_dependencies:
 
   # https://pub.dev/packages/faker
   faker: ^2.0.0
+ 
+  # https://pub.dev/packages/mocktail
+  mocktail: ^0.3.0
+  http_mock_adapter: ^0.3.3
+  full_coverage: ^0.0.3
 
 
  
